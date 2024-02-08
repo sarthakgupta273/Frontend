@@ -30,14 +30,14 @@ export class DataService {
     console.log(blogPost);
   }
 
-  baseUrl = "http://localhost:9094/post/upload";
+  baseUrl = "http://10.0.165.221:8880/post/upload";
 
   public addPosts(postData: any): Observable<Object> { 
     console.log(postData); 
     return this.httpcl.post(this.baseUrl, postData);
   }
 
-  baseUrl1 = "http://localhost:9094/post/view";
+  baseUrl1 = "http://10.0.165.221:8880/post/view";
 
   public getPosts() {
     const headers = new HttpHeaders({
@@ -46,7 +46,7 @@ export class DataService {
     return this.httpcl.get<postData[]>(this.baseUrl1, {headers});
   }
 
-  baseUrl2 = "http://localhost:9094/post/addComment"
+  baseUrl2 = "http://10.0.165.221:8880/post/addComment"
   addComments(info:comment)
   {
     return this.httpcl.post(this.baseUrl2, info )
@@ -57,7 +57,7 @@ export class DataService {
 
   showComments(id:string)
   {
-    return this.httpcl.get(`http://localhost:9094/post/getComments/${id}`)
+    return this.httpcl.get(`http://10.0.165.221:8880/post/getComments/${id}`)
   }
 
 }

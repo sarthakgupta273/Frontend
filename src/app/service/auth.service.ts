@@ -9,7 +9,7 @@ import { DataService } from './data.service';
 })
 export class AuthService {
 
-  baseUrl="http://localhost:9094/auth/register"
+  baseUrl="http://10.0.47.130:8083/auth/register"
 
   constructor(private httpcl:HttpClient)  {
   }
@@ -25,7 +25,7 @@ export class AuthService {
       password: data.password,
     };
     localStorage.setItem("name",data.username)
-    return this.httpcl.post('http://localhost:9094/auth/login', loginData);
+    return this.httpcl.post(`http://10.0.47.130:8083/auth/login`, loginData);
   }
   
 
